@@ -19,6 +19,35 @@
 \*------------------------------------*/
 
 :root {
+  /* colors */
+  --global-color-alpha-ligth: #4f95ff;
+  --global-color-alpha: #3385ff;
+  --global-color-alpha-dark: #2e77e6;
+  --global-color-alpha-x-dark: #1b4186;
+  --global-color-neutral-xx-dark: #4b4c60;
+  --global-color-neutral-xxx-dark: #353743;
+  --global-color-neutral-xxxx-dark: #20223a;
+  --global-color-neutral-base: #757787;
+  --global-color-dark: #606274;
+  --global-color-x-dark: #4b4c60;
+  --global-color-xx-dark: #35374d;
+  --global-color-xxx-dark: #2a2c43;
+  --global-color-xxxx-dark: #20223a;
+
+  --global-borderRadius: 3px;
+  --global-borderWidth: 1px;
+
+  --global-transitionTiming-alpha: 0.1s ease-out;
+
+  --global-baseline: 8px;
+  --global-whitespace: calc(var(--global-baseline) * 3);
+
+  --global-whitespace-xs: calc(var(--global-baseline) * 0.5);
+  --global-whitespace-sm: calc(var(--global-baseline) * 1);
+  --global-whitespace-md: calc(var(--global-baseline) * 2);
+  --global-whitespace-lg: calc(var(--global-baseline) * 4);
+  --global-whitespace-xl: calc(var(--global-whitespace) * 2);
+  --global-whitespace-xxl: calc(var(--global-whitespace) * 3);
 }
 
 /* CSS variables here */
@@ -206,7 +235,11 @@ input {
 .o-row--login {
   /* stuff here to align the card */
 }
-
+.o-row--body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
 /* size modifiers */
 
 .o-row--lg {
@@ -476,6 +509,42 @@ input {
     Card with box shadow
 */
 
+.c-card {
+  background-color: #ffffff;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.07);
+}
+
+.c-card__body,
+.c-card__footer {
+  padding: 24px;
+}
+
+.c-card__footer {
+  border-top: 1px solid #e2e3e7;
+  color: #757787;
+}
+
+.c-card__title {
+  font-size: 18px;
+}
+
+.c-card__body > *:last-child,
+.c-card__footer > *:last-child,
+.c-card__body > *:last-child > *:last-child,
+.c-card__footer > *:last-child > *:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 27em) {
+  .c-card__body {
+    padding: 48px;
+  }
+  .c-card__title {
+    margin-bottom: 48px;
+  }
+}
+
 /*
     Component: Forms
     ---
@@ -525,6 +594,14 @@ input {
 */
 
 .c-label {
+  font-size: 14px;
+  color: #4b4c60;
+  padding-bottom: 8px;
+}
+
+.c-label--option {
+  padding-bottom: 0;
+  padding: 8px;
 }
 
 /* If a input is focused within the form-field class change te color of the label */
@@ -649,7 +726,7 @@ input {
     Utility classes align text or components
 */
 
-.u-align-text-center {
+.u-text-align-center {
   text-align: center;
 }
 
